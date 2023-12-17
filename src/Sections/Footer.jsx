@@ -2,6 +2,7 @@ import { copyrightSign } from "../assets/icons"
 import { footerLogo } from "../assets/images"
 import { footerLinks, socialMedia } from "../constants"
 const Footer = () => {
+  console.log(socialMedia)
   return (
     <footer className="max-container">
       <div className="flex justify-between items-center gap-20 flex-wrap  max-lg:flex-col">
@@ -22,7 +23,7 @@ const Footer = () => {
         </div>
         <div className="flex flex-1 justify-between lg:gap-10 gap-20 flex-wrap">{
         footerLinks.map((section) => (
-          <div key={section}>
+          <div key={section.title}>
               <h4 className="text-white font-montserrat text-2xl leading-normal font-medium mb-6">
                 {section.title}
               </h4>
@@ -30,7 +31,7 @@ const Footer = () => {
                 {
                   section.links.map((link) => (
                     <li key={link.name} className="mt-3 text-white-400 font-montserrat text-base leading-normal hover:text-slate-gray cursor-pointer">
-                      <a href="">{link.name}</a>
+                      <a href={link.link}>{link.name}</a>
                     </li>
                   ))
                 }
